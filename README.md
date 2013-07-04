@@ -1,5 +1,7 @@
 # lineman-lib-template
 
+[![Build Status](https://travis-ci.org/testdouble/lineman-lib-template.png?branch=master)](https://travis-ci.org/testdouble/lineman-lib-template)
+
 This is a hyper-focused template project for [Lineman](http://linemanjs.org) that's designed to make it *an absolute breeze* to develop and distribute JavaScript libraries for the web.
 
 ## getting started
