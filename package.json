@@ -1,12 +1,13 @@
 {
-  "name": "lineman-lib-template",
-  "title": "A template Lineman project for creating libraries",
+  "name": "your-lib-name-here",
   "version": "0.0.1",
+  "description": "A description about how Lineman helped you build your lib",
+  "homepage": "https://your/lib/name/here",
   "author": {
-    "name": "Justin Searls",
-    "company": "Test Double, LLC"
+    "name": "Justin Searls (or your name)",
+    "company": "Test Double, LLC (or your company)"
   },
   "dependencies": {
-    "lineman": "~0.10.1"
+    "lineman": "~0.11.0"
   }
 }

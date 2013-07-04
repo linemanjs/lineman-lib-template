@@ -11,5 +11,11 @@
 #   To see the default definitions for all of Lineman's file paths and globs, look at:
 #   https://github.com/testdouble/lineman/blob/master/config/files.coffee
 #
-module.exports = require(process.env["LINEMAN_MAIN"]).config.extend("files", {})
-  #Override file patterns here
+
+lineman = require(process.env["LINEMAN_MAIN"])
+grunt = lineman.grunt
+
+module.exports = lineman.config.extend "files",
+  js:
+    uncompressedDist: "dist/#{grunt.file.readJSON('package.json').name}.js"
+
