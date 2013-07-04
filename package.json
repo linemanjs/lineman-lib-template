@@ -1,0 +1,12 @@
+{
+  "name": "lineman-lib-template",
+  "title": "A template Lineman project for creating libraries",
+  "version": "0.0.1",
+  "author": {
+    "name": "Justin Searls",
+    "company": "Test Double, LLC"
+  },
+  "dependencies": {
+    "lineman": "~0.10.1"
+  }
+}
