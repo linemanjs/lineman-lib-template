@@ -3,5 +3,5 @@
     _([1..n]).inject (sum, i) ->
       sum + i
     , 0
-)(this, _.noConflict())
+)(this, _)
 
