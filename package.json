@@ -8,6 +8,6 @@
     "company": "Test Double, LLC (or your company)"
   },
   "dependencies": {
-    "lineman": "~0.11.0"
+    "lineman": "~0.11.2"
   }
 }
