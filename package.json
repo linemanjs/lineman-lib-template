@@ -7,7 +7,12 @@
     "name": "Justin Searls (or your name)",
     "company": "Test Double, LLC (or your company)"
   },
+  "main": "main.js",
   "dependencies": {
-    "lineman": "~0.11.2"
+    "coffee-script": "~ 1.6.3",
+    "underscore": "~1.5.1"
+  },
+  "devDependencies": {
+    "lineman": ">=0.11.2"
   }
 }

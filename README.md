@@ -78,4 +78,9 @@ It's worth mentioning that lineman-lib-template will, by default, *not include* 
 includeVendorInDistribution = true
 ```
 
+## publishing your lib to npm for use with Node.js
 
+This template also provides an easy example of publishing your lib on Node if that's
+appropriate. Instead of pointing at the built distribution, consider exporting your
+goods from `main.js`. Take a look at the project as a silly little example (note
+that it is dumping the example method, `sumTo` onto global scope).
