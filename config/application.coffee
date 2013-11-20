@@ -18,7 +18,7 @@ application = lineman.config.extend "application",
   meta:
     banner: """
             /* <%= pkg.name %> - <%= pkg.version %>
-             * <%= pkg.description || pkg.description %>
+             * <%= pkg.description %>
              * <%= pkg.homepage %>
              */
 
