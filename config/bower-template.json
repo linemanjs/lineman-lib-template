@@ -1,7 +1,7 @@
 {
   "name": "<%= pkg.name %>",
   "version": "<%= pkg.version %>",
-  "main": "dist/<%= files.js.uncompressedDist %>",
+  "main": "<%= files.js.uncompressedDist %>",
   "ignore": [
     "app",
     "config",
