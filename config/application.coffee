@@ -11,15 +11,20 @@
 #   $ lineman config #=> to print the entire config
 #   $ lineman config concat.js #=> to see the JS config for the concat task.
 #
-# lineman-lib-template config options:
+# lineman-lib-template config options can be found in "config/lib.json"
 
-includeVendorInDistribution = false #set to true if you want your distribution to contain JS files in vendor/js
+libConfig = require('./lib')
 
 module.exports = (lineman) ->
   grunt = lineman.grunt
   _ = grunt.util._
+  app = lineman.config.application
 
-  lineman.config.application.uglify.js.files = _({}).tap (config) ->
+  if libConfig.generateBowerJson
+    app.loadNpmTasks.push("grunt-write-bower-json")
+    app.appendTasks.dist.push("writeBowerJson")
+
+  app.uglify.js.files = _({}).tap (config) ->
     config["dist/#{grunt.file.readJSON('package.json').name}.min.js"] = "<%= files.js.uncompressedDist %>"
 
   meta:
@@ -41,7 +46,7 @@ module.exports = (lineman) ->
       options:
         banner: "<%= meta.banner %>"
       src: _([
-        ("<%= files.js.vendor %>" if includeVendorInDistribution),
+        ("<%= files.js.vendor %>" if libConfig.includeVendorInDistribution),
         "<%= files.coffee.generated %>",
         "<%= files.js.app %>"
       ]).compact()
