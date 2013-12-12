@@ -1,19 +1,26 @@
-# Exports an object that defines
-#  all of the configuration needed by the projects'
-#  depended-on grunt tasks.
+# Exports a function which returns an object that overrides the default &
+#   plugin grunt configuration object.
 #
-# You can familiarize yourself with all of Lineman's defaults by checking out the parent file:
-# https://github.com/testdouble/lineman/blob/master/config/application.coffee
+# You can familiarize yourself with Lineman's defaults by checking out:
 #
-
+#   - https://github.com/testdouble/lineman/blob/master/config/application.coffee
+#   - https://github.com/testdouble/lineman/blob/master/config/plugins
+#
+# You can also ask Lineman's about config from the command line:
+#
+#   $ lineman config #=> to print the entire config
+#   $ lineman config concat.js #=> to see the JS config for the concat task.
+#
 # lineman-lib-template config options:
 
 includeVendorInDistribution = false #set to true if you want your distribution to contain JS files in vendor/js
 
-lineman = require(process.env["LINEMAN_MAIN"])
-grunt = lineman.grunt
-_ = grunt.util._
-application = lineman.config.extend "application",
+module.exports = (lineman) ->
+  grunt = lineman.grunt
+  _ = grunt.util._
+
+  lineman.config.application.uglify.js.files = _({}).tap (config) ->
+    config["dist/#{grunt.file.readJSON('package.json').name}.min.js"] = "<%= files.js.uncompressedDist %>"
 
   meta:
     banner: """
@@ -40,7 +47,4 @@ application = lineman.config.extend "application",
       ]).compact()
       dest: "<%= files.js.uncompressedDist %>"
 
-application.uglify.js.files = _({}).tap (config) ->
-  config["dist/#{grunt.file.readJSON('package.json').name}.min.js"] = "<%= files.js.uncompressedDist %>"
 
-module.exports = application
