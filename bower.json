@@ -1,0 +1,17 @@
+{
+  "name": "your-lib-name-here",
+  "version": "0.0.1",
+  "main": "dist/your-lib-name-here.js",
+  "ignore": [
+    "app",
+    "config",
+    "spec",
+    "tasks",
+    ".travis.yml",
+    "Gruntfile.js",
+    "main.js",
+    "package.json"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}

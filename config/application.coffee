@@ -20,12 +20,12 @@ module.exports = (lineman) ->
   _ = grunt.util._
   app = lineman.config.application
 
-  if libConfig.generateBowerJson
-    app.loadNpmTasks.push("grunt-write-bower-json")
-    app.appendTasks.dist.push("writeBowerJson")
+  app.appendTasks.dist.push("writeBowerJson") if libConfig.generateBowerJson
 
   app.uglify.js.files = _({}).tap (config) ->
     config["dist/#{grunt.file.readJSON('package.json').name}.min.js"] = "<%= files.js.uncompressedDist %>"
+
+  loadNpmTasks: ["grunt-write-bower-json", "grunt-contrib-concat"]
 
   meta:
     banner: """
@@ -37,9 +37,12 @@ module.exports = (lineman) ->
             """
 
   removeTasks:
-    common: ["less", "handlebars", "jst", "images:dev", "webfonts:dev", "pages:dev"]
+    common: ["less", "handlebars", "jst", "concat_sourcemap", "images:dev", "webfonts:dev", "pages:dev"]
     dev: ["server"]
     dist: ["cssmin", "images:dist", "webfonts:dist", "pages:dist"]
+
+  appendTasks:
+    common: ["concat"]
 
   concat:
     uncompressedDist:
