@@ -1,13 +1,13 @@
 # lineman-lib-template
 
-[![Build Status](https://travis-ci.org/testdouble/lineman-lib-template.png?branch=master)](https://travis-ci.org/testdouble/lineman-lib-template)
+[![Build Status](https://travis-ci.org/linemanjs/lineman-lib-template.png?branch=master)](https://travis-ci.org/linemanjs/lineman-lib-template)
 
 This is a hyper-focused template project for [Lineman](http://linemanjs.org) that's designed to make it *an absolute breeze* to develop and distribute JavaScript libraries for the web.
 
 ## getting started
 
 1. clone & cd into this repo
-2. ensure you have [Node](http://nodejs.org) and [Lineman](https://github.com/testdouble/lineman#getting-started) installed
+2. ensure you have [Node](http://nodejs.org) and [Lineman](https://github.com/linemanjs/lineman#getting-started) installed
 3. run `lineman build`
 
 Now, if you crack open the dist directory, you should see two files:
@@ -40,7 +40,7 @@ What's nifty is that the repo *also* benefits from the same lifecycle that Linem
 * Write tests and run them with `lineman spec` during development
 * Run tests in CI with `lineman spec-ci`
 
-See [Lineman's README](https://github.com/testdouble/lineman#working-with-lineman) for more details.
+See [Lineman's README](https://github.com/linemanjs/lineman#working-with-lineman) for more details.
 
 ## making your lib
 
