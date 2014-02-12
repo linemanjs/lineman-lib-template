@@ -4,8 +4,8 @@
   "description": "A description about how Lineman helped you build your lib",
   "homepage": "https://your/lib/name/here",
   "author": {
-    "name": "Justin Searls (or your name)",
-    "company": "Test Double, LLC (or your company)"
+    "name": "John Doe",
+    "company": "ACME, Inc."
   },
   "main": "main.js",
   "dependencies": {
@@ -13,8 +13,12 @@
     "underscore": "~1.5.1"
   },
   "devDependencies": {
-    "lineman": ">= 0.23.1",
+    "lineman": ">= 0.24.7",
     "lineman-lib": ">= 0.0.1",
     "grunt": "~0.4.2"
+  },
+  "scripts": {
+    "start": "lineman run",
+    "test": "lineman spec-ci"
   }
 }
