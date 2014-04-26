@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "lineman": ">= 0.24.7",
-    "lineman-lib": ">= 0.0.1",
+    "lineman-lib": ">= 0.1.0",
     "grunt": "~0.4.2"
   },
   "scripts": {
